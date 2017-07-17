@@ -1,0 +1,13 @@
+<md-toolbar color="primary">
+  {{title}}
+</md-toolbar>
+<section>
+  <md-input-container>
+    <input mdInput placeholder="search" type="search" [(ngModel)]= "searchTerm"
+    (ngModelChange)="search(searchTerm)">
+
+  </md-input-container>
+  <div *ngFor="let item of results | async">
+    {{item.name}} - {{item.full_name}} -- {{item.owner.type}}
+  </div>
+</section>
